@@ -6,7 +6,14 @@ import { SparkForm } from "@/components/spark-form";
 import { CrisisBar } from "@/components/crisis-bar";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { APP_NAME, APP_SUBTITLE, APP_TAGLINE } from "@/lib/constants";
+import {
+  APP_CREATOR,
+  APP_CREATOR_IMAGE,
+  APP_CREATOR_ROLE,
+  APP_NAME,
+  APP_SUBTITLE,
+  APP_TAGLINE,
+} from "@/lib/constants";
 import { getDailySpark, listProfiles, listSparks } from "@/lib/server/community";
 import { listStories } from "@/lib/server/stories";
 import type { Profile, Spark, Story } from "@/lib/types";
@@ -36,8 +43,8 @@ function Home() {
     <div className="space-y-16">
       <section className="stagger-in grid items-center gap-8 lg:grid-cols-[minmax(0,0.9fr)_1.1fr]">
         <img
-          src="/images/cover.jpg"
-          alt="Aftermath: The Truth podcast mark — a microphone in red light"
+          src={APP_CREATOR_IMAGE}
+          alt={`${APP_CREATOR}, ${APP_CREATOR_ROLE}`}
           className="mx-auto w-full max-w-sm rounded-xl object-cover shadow-[0_0_80px_rgba(211,24,32,0.16)]"
         />
         <div>
@@ -51,6 +58,17 @@ function Home() {
             turning points, and the life that came after. Proof that people make it out — and that
             their hard-won wisdom can reach the next person.
           </p>
+          <div className="mt-5 flex items-center gap-3">
+            <img
+              src={APP_CREATOR_IMAGE}
+              alt=""
+              className="size-10 rounded-full object-cover"
+            />
+            <div className="leading-tight">
+              <p className="text-sm font-medium text-foreground">{APP_CREATOR}</p>
+              <p className="text-xs text-muted-foreground">{APP_CREATOR_ROLE}</p>
+            </div>
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild>
               <Link to="/stories">
