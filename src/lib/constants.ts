@@ -3,6 +3,7 @@ export const APP_SUBTITLE = "The Truth";
 export const APP_TAGLINE = "We survived. Now we speak.";
 export const APP_CREATOR = "Lyndsay Belcoure";
 export const APP_CREATOR_ROLE = "Creator · CEO";
+export const APP_CREATOR_IMAGE = "/images/lyndsay.jpg";
 
 export const THEMES = [
   { id: "rock-bottom", label: "Rock bottom" },
