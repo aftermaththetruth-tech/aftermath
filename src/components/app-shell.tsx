@@ -11,7 +11,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { APP_CREATOR, APP_CREATOR_ROLE, APP_NAME, APP_SUBTITLE } from "@/lib/constants";
+import {
+  APP_CREATOR,
+  APP_CREATOR_IMAGE,
+  APP_CREATOR_ROLE,
+  APP_NAME,
+  APP_SUBTITLE,
+} from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -136,7 +142,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Mic className="size-3.5 text-primary" />
             If you are in immediate danger, call or text 988. You are not alone.
           </p>
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <Link to="/guidelines" className="hover:text-foreground">
               Guidelines
             </Link>
@@ -146,8 +152,15 @@ export function AppShell({ children }: { children: ReactNode }) {
             <a href="tel:988" className="hover:text-foreground">
               988
             </a>
-            <span>
-              {APP_CREATOR_ROLE} {APP_CREATOR}
+            <span className="inline-flex items-center gap-2">
+              <img
+                src={APP_CREATOR_IMAGE}
+                alt={APP_CREATOR}
+                className="size-7 rounded-full object-cover"
+              />
+              <span>
+                {APP_CREATOR_ROLE} {APP_CREATOR}
+              </span>
             </span>
           </div>
         </div>
